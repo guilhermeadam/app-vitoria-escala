@@ -1,7 +1,51 @@
-.container {
+.main-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background: #dcdcdc;
+    text-align: center;
+    margin-top: 25px;
+}
+
+h1 {
+    color: #FC9D01;
+    font-weight: bold;
+}
+
+h2 {
+    color: #005da6;
+}
+
+hr {
+    width: 250px;
+    height: 10px;
+}
+
+h3 {
+    color: #FC9D01;
+    font-weight: bold;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button[type='submit'] {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    background: #fff;
+    color: #005da6;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+}
+
+button[type='submit']:hover {
+    background: #005da6;
+    color: #fff;
 }
