@@ -11,7 +11,7 @@ const Main = () => {
   useEffect(() => {
     if (submit) {
       axios
-        .get(`http://localhost:3001/escala?mat=${submit}&_sort=pegada`)
+        .get(`http://localhost:3001/escala?mat=${submit}&_sort=data`)
         .then((response) => setValues(response.data));
     }
   }, [submit]);
@@ -27,17 +27,24 @@ const Main = () => {
 
   return (
     <>
-        <div className="main-page">
-          <h1>Consulta Escala</h1>
-          <h2>Empresa Vitória</h2>
-          <hr />
-          <h3>Matrícula</h3>
-          <form onSubmit={onSubmit}>
-            <input placeholder="Digite sua matrícula" required onChange={onChange} />
-            <br />
-            <button type="submit">Consultar</button>
-          </form>
-        </div>
+      <div className="main-page">
+        <h1>Consulta Escala</h1>
+        <h2>Empresa Vitória</h2>
+        <hr />
+        <h3>Matrícula</h3>
+        <form onSubmit={onSubmit}>
+          <input
+            placeholder="Ex: 1958"
+            required
+            type="number"
+            onChange={onChange}
+          />
+          <br />
+          <button className="main-button" type="submit">
+            Consultar
+          </button>
+        </form>
+      </div>
       {values.length > 0 && <Table Scale={values} />}
     </>
   );

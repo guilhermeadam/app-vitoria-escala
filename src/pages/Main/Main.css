@@ -26,14 +26,19 @@ h3 {
 }
 
 input {
-    margin: 10px;
+    margin: 10px 20px 30px 20px;
     padding: 10px;
     border: 1px solid;
     border-radius: 5px;
     text-align: center;
+    width: 250px;
+    background: #fff;
+    color: #FC9D01;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-button[type='submit'] {
+.main-button {
     margin: 10px;
     padding: 10px;
     border: 2px solid;
@@ -45,7 +50,7 @@ button[type='submit'] {
     width: 250px;
 }
 
-button[type='submit']:hover {
+.main-button:hover {
     background: #005da6;
     color: #fff;
 }

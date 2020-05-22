@@ -1,0 +1,23 @@
+.container-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.button-component {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid;
+    border-radius: 5px;
+    color: #FC9D01;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button-component:hover {
+    color: #fff;
+    background: #FC9D01;
+}
