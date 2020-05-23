@@ -73,6 +73,7 @@ const Main = () => {
             <TextField
               required
               autoFocus
+              fullWidth
               type="password"
               size="small"
               margin="normal"
