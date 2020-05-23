@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Table from "../../components/Table/Table";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
@@ -27,31 +25,10 @@ const useStyles = makeStyles(theme => ({
   fontColorButton: { background: "#005da6", color: "#fff", marginTop: 15 },
 }));
 
-const Main = () => {
+export default function SimpleContainer() {
   const styles = useStyles();
 
-  const [input, setInput] = useState("");
-  const [submit, setSubmit] = useState("");
-  const [values, setValues] = useState([]);
-
-  useEffect(() => {
-    if (submit) {
-      axios
-        .get(`http://localhost:3001/escala?mat=${submit}&_sort=pegada`)
-        .then((response) => setValues(response.data));
-    }
-  }, [submit]);
-
-  function onSubmit(event) {
-    event.preventDefault();
-    setSubmit(input);
-  }
-
-  function onChange(event) {
-    setInput(event.target.value);
-  }
   return (
-    <>
     <Container maxWidth="sm">
       <div className={styles.paper}>
         <Paper elevation={4}>
@@ -62,7 +39,7 @@ const Main = () => {
             Empresa Vitória
           </Typography>
           <Divider variant="middle" />
-          <form className={styles.form} onSubmit={onSubmit}>
+          <form className={styles.form}>
             <Typography
               align="center"
               variant="subtitle1"
@@ -78,13 +55,11 @@ const Main = () => {
               margin="normal"
               label="Matrícula"
               variant="outlined"
-              onChange={onChange}
             />
             <Button
               fullWidth
               variant="contained"
               className={styles.fontColorButton}
-              type="submit"
             >
               Consultar
             </Button>
@@ -92,10 +67,5 @@ const Main = () => {
         </Paper>
       </div>
     </Container>
-    {values.length > 0 && <Table Scale={values} />}
-    </>
   );
 }
-
-export default Main;
-
