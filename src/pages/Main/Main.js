@@ -35,9 +35,9 @@ const Main = () => {
   const [values, setValues] = useState([]);
 
   useEffect(() => {
-    if (submit) {
+    if(submit) {
       axios
-        .get(`http://localhost:3001/escala?mat=${submit}&_sort=pegada`)
+        .get(`http://localhost:3001/escala?mat=${submit}&_sort=data`)
         .then((response) => setValues(response.data));
     }
   }, [submit]);
@@ -74,6 +74,7 @@ const Main = () => {
               required
               autoFocus
               fullWidth
+              autoComplete="false"
               type="password"
               size="small"
               margin="normal"
